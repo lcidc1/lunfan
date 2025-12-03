@@ -1,4 +1,7 @@
+from flask import Flask, redirect
 import random
+
+app = Flask(__name__)
 
 @app.route('/dynamic-qr')
 def handle_qr_scan():
@@ -11,3 +14,6 @@ def handle_qr_scan():
     ]
     
     return redirect(random.choice(offers))
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
