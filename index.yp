@@ -1,0 +1,13 @@
+import random
+
+@app.route('/dynamic-qr')
+def handle_qr_scan():
+    # 随机展示
+    offers = [
+        'https://offer1.com',
+        'https://offer2.com',
+        'https://offer3.com',
+        'https://offer4.com'
+    ]
+    
+    return redirect(random.choice(offers))
